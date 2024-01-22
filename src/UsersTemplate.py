@@ -32,5 +32,5 @@ class Handler(tornado.web.RequestHandler):
     def get(self):
         p = self.request.path
         p = p[9:] #strips /profile/ from path leaving just login
-        self.render( "UsersTemplate.html", path=p, userData = users )
+        self.render( "UsersTemplate.html", path=p, userData = users)
 

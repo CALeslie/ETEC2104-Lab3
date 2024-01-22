@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset=utf8>
+    <link rel=stylesheet href="/static/myStyle.css"></link>
     <title>Profile: {{path}}</title>
 </head>
 <body>
 <hr>Profile: {{path}}<hr><br>
 
-<div style="border: 5px solid rgb(151, 169, 248);">
+<div class="UserInfo">
 Name: {{userData[path]["realname"]}} <hr>
 Login: {{userData[path]["login"]}} <hr>
 DOB: {{userData[path]["dob"]}} <hr>
-Email: {{userData[path]["email"]}}
+Email: {{userData[path]["email"]}} <hr>
+Picture: <img src="/static/{{path}}.png">
 </div>
 
 </body>

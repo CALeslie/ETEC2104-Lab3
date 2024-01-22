@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.UserInfo {
+    font-weight: 500;
+    font-family: 'Courier New', Courier, monospace;
+    border: 0.1cm solid rgb(200,50,50);
+    margin: 0.1cm;
+    padding: 0.1cm;
+    
+}
