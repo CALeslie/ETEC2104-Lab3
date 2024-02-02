@@ -4,17 +4,38 @@
     <meta charset=utf8>
     <link rel=stylesheet href="/static/myStyle.css"></link>
     <title>Profile: {{path}}</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.png">
 </head>
 <body>
 <hr>Profile: {{path}}<hr><br>
 
 <div class="UserInfo">
-Name: {{userData[path]["realname"]}} <hr>
-Login: {{userData[path]["login"]}} <hr>
-DOB: {{userData[path]["dob"]}} <hr>
-Email: {{userData[path]["email"]}} <hr>
-Picture: <img src="/static/{{path}}.png">
+<div id="nameDisplay">Name: {{userData[path]["realname"]}} </div>
+<br>
+Edit Name:<input id="name"></input>
+<hr>
+<div id="loginDisplay">Login: {{userData[path]["login"]}} </div>
+<br>
+Edit Login:<input id="login"></input>
+<hr>
+<div id="dobDisplay">DOB: {{userData[path]["dob"]}} </div>
+<br>
+Edit Date of Birth:<input id="dob" type="date"></input>
+<hr>
+<div id="emailDisplay">Email: {{userData[path]["email"]}} </div> 
+<br>
+Edit Email:<input id="email" type="email"></input>
+<hr>
+<div>Picture: <img id="pictureDisplay" src="/static/{{path}}.png"></div>
+<br>
+Edit Profile Picture:<input id="pic" type="file" accept="image/jpeg, image/png"></input>
+<hr>
+<button id="submitChanges" onclick="submitChanges()">Submit Changes</button>
 </div>
+<br>
+<a href="/..">Return to Homepage</a>
+
+<script src="/static/UsersTemplate.js"></script>
 
 </body>
 </html>

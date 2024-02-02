@@ -1,4 +1,6 @@
 import tornado.web
+import json
+import base64
 import random
 
 users = {
@@ -33,4 +35,15 @@ class Handler(tornado.web.RequestHandler):
         p = self.request.path
         p = p[9:] #strips /profile/ from path leaving just login
         self.render( "UsersTemplate.html", path=p, userData = users)
+
+    def post(self):
+        J=json.loads(self.request.body)
+        name = J["Name"]
+        login = J["Login"]
+        dob = J["Dob"]
+        email = J["Email"]
+        pic= base64.b64decode(J["Picture"])
+        print ("WE GOT:",name,login,dob,email)
+        resp={"ok":True}
+        self.write(json.dumps(resp))
 
